@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Action Herbalist
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: 1917202ed9b5dcc43a0dbbaf50d1b880, type: 3}
+  - {fileID: 21300000, guid: acfe5b566e8951b48995dde0cc275c8a, type: 3}
+  - {fileID: 21300000, guid: a99eb2730b28bb249adffdb38c58db6a, type: 3}
+  - {fileID: 21300000, guid: 9bf8a7b77cc7fa641be8ba5194172a1e, type: 3}
+  - {fileID: 21300000, guid: f64428a42120f2b4a92b559aead046b8, type: 3}
+  - {fileID: 21300000, guid: 392262757ecb0ee459ae6f5c15d801ac, type: 3}
+  - {fileID: 21300000, guid: ffee8e6de10401a4f8a5fc7d7caf0d78, type: 3}
+  - {fileID: 21300000, guid: 2a9ed1cb60a5aed42a47d94112f28d24, type: 3}
+  - {fileID: 21300000, guid: 283c3d4328650b3428367404fa9a6c9a, type: 3}
+  - {fileID: 21300000, guid: e1c1e9c1635e5294b98dccb0922cec5d, type: 3}
+  - {fileID: 21300000, guid: 237029bafcef5c142aea103ff3d09196, type: 3}
+  - {fileID: 21300000, guid: ec6eaafc028b63140935ff95c98cbf88, type: 3}
+  - {fileID: 21300000, guid: 10cc464dbaeb07f468d62668b137ea59, type: 3}
+  - {fileID: 21300000, guid: 5cf5e979b9096204d85610aae06f17a5, type: 3}
+  - {fileID: 21300000, guid: 9b989d369c47ee34b9017810c8e9a102, type: 3}
+  - {fileID: 21300000, guid: 8f7ce18b5e6289643ac03fb5fc7fe845, type: 3}
+  - {fileID: 21300000, guid: aad13961b67bd7648978f2c7ebccf28f, type: 3}
+  - {fileID: 21300000, guid: 7358999406e49504e9f94ba8341f8074, type: 3}
+  - {fileID: 21300000, guid: 287b747385df4fb4585429ba90c42674, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

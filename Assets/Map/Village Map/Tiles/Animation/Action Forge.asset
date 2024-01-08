@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Action Forge
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: d6f6a3902573102479ac2245900b89ff, type: 3}
+  - {fileID: 21300000, guid: f65758af21e0dbe46a258a45f25d5761, type: 3}
+  - {fileID: 21300000, guid: a65f80454c6905949b4ea196e333e550, type: 3}
+  - {fileID: 21300000, guid: ee57ac918383f1e4e90b0115df4e1ca1, type: 3}
+  - {fileID: 21300000, guid: ee54cc477937f4146986b983d1da9640, type: 3}
+  - {fileID: 21300000, guid: aefb9b06a282bdb46a047a2fbdb04b0f, type: 3}
+  - {fileID: 21300000, guid: 16eec13b5febe2643b50e44f582f38c1, type: 3}
+  - {fileID: 21300000, guid: 0bbc2a1b9d4402e4097f1d09ee7a0be8, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0

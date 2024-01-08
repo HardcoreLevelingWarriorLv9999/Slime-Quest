@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: Action Potion Maker
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: 21300000, guid: 35cca8ae83f5f444780b6cc2c5b994af, type: 3}
+  - {fileID: 21300000, guid: 22212c9e3be62af4881a65d96c39b609, type: 3}
+  - {fileID: 21300000, guid: 83384d6da431ab54388df384a9ef2dfa, type: 3}
+  - {fileID: 21300000, guid: a0282e5d7570190409bc2cec8d15045a, type: 3}
+  - {fileID: 21300000, guid: 527f917a3f0fb5747aa9ac2bb6e2e41b, type: 3}
+  - {fileID: 21300000, guid: 5f043940d56ba634caf63eb10584fd7d, type: 3}
+  - {fileID: 21300000, guid: d0652faed2dcfd2488a39b6e23e45118, type: 3}
+  - {fileID: 21300000, guid: c7ce8bfc8288a6c4d895b9635ee822b0, type: 3}
+  - {fileID: 21300000, guid: 5d2edfb7dceef5848b18912c161acded, type: 3}
+  - {fileID: 21300000, guid: 8a1ec81b4745a6f4fb90ca445a120403, type: 3}
+  - {fileID: 21300000, guid: 9417ca57fa6410747b23cc535f7cfcab, type: 3}
+  - {fileID: 21300000, guid: 581d41a6af07f1b49991e865d901af3e, type: 3}
+  - {fileID: 21300000, guid: add447ce1e3b0094d992fd2790fb55f5, type: 3}
+  - {fileID: 21300000, guid: 33e20fdbcb48c8646909aaa42600d332, type: 3}
+  - {fileID: 21300000, guid: a02175b439afbc340b493a37a07ad911, type: 3}
+  - {fileID: 21300000, guid: 577afbb23d804064096c47821952871d, type: 3}
+  - {fileID: 21300000, guid: caac15b6c3e04da4584ce07d9478dfd8, type: 3}
+  - {fileID: 21300000, guid: 40829573db1fdf6468332708f86ddfcf, type: 3}
+  - {fileID: 21300000, guid: e0e424d20b1f92f419174b8f4f982178, type: 3}
+  - {fileID: 21300000, guid: 207384942869e56419be42956f1677f5, type: 3}
+  - {fileID: 21300000, guid: ec3764439f386cd48af779b77be09b7f, type: 3}
+  - {fileID: 21300000, guid: 0df3ed8754ce4f145a4c41751cf10eb1, type: 3}
+  - {fileID: 21300000, guid: a92da1387a5be534e8cdc5e4b5a20f94, type: 3}
+  - {fileID: 21300000, guid: ba125d4ea64e0e34aad8d79aa0c33430, type: 3}
+  m_MinSpeed: 10
+  m_MaxSpeed: 10
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
+  m_TileAnimationFlags: 0
