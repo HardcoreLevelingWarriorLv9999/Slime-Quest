@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class HurtPlayer : MonoBehaviour
-{   
+{
     private HealthManager healthSlime;
     private float waitToHurt = 2f;
     private bool isTouching;
@@ -54,7 +54,18 @@ public class HurtPlayer : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D other)
     {
-        isTouching = true;
+        if (other.collider.tag == "Player")
+        {
+            isTouching = true;
+        }
+    }
 
+    void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.collider.tag == "Player")
+        {
+            isTouching = false;
+            waitToHurt = 2f;
+        }
     }
 }
