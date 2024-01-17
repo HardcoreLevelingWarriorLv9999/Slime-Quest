@@ -21,15 +21,6 @@ public class HurtPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //     if (reloading)
-        //     {
-        //         waitToLoad -= Time.deltaTime;
-        //         if (waitToLoad <= 0)
-        //         {
-        //             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //         }
-        //     }
-
         if (isTouching)
         {
             waitToHurt -= Time.deltaTime;
@@ -45,10 +36,7 @@ public class HurtPlayer : MonoBehaviour
     {
         if (other.collider.tag == "Player")
         {
-            // Destroy(other.gameObject);
-            // other.gameObject.SetActive(false);
             other.gameObject.GetComponent<HealthManager>().HurtPlayer(damgeToGive);
-            // reloading = true;
         }
     }
 

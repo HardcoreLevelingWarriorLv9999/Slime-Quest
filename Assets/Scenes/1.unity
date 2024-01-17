@@ -3866,10 +3866,10 @@ GameObject:
   - component: {fileID: 1614903924}
   - component: {fileID: 1614903928}
   - component: {fileID: 1614903926}
-  - component: {fileID: 1614903929}
-  - component: {fileID: 1614903931}
   - component: {fileID: 1614903930}
   - component: {fileID: 1614903932}
+  - component: {fileID: 1614903934}
+  - component: {fileID: 1614903935}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -3971,20 +3971,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1614903929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1614903923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2fdca6ec978cbd44991c36c722e06b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 200
-  rb: {fileID: 1614903926}
 --- !u!95 &1614903930
 Animator:
   serializedVersion: 5
@@ -4006,8 +3992,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!61 &1614903931
-BoxCollider2D:
+--- !u!114 &1614903932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1614903923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ed318feab1527418905c616595d9cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 50
+  maxHealth: 50
+  flashLenght: 0.5
+--- !u!60 &1614903934
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4048,10 +4049,18 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.15666667, y: 0.10666667}
-  m_EdgeRadius: 0
---- !u!114 &1614903932
+  m_Points:
+    m_Paths:
+    - - {x: -0.021358341, y: 0.25804195}
+      - {x: -0.13499878, y: 0.22679183}
+      - {x: -0.23790295, y: 0.1683764}
+      - {x: -0.36408475, y: -0.03491942}
+      - {x: -0.34708256, y: -0.24619344}
+      - {x: 0.3671875, y: -0.25}
+      - {x: 0.3631669, y: 0.032977484}
+      - {x: 0.16670729, y: 0.22231223}
+  m_UseDelaunayMesh: 0
+--- !u!114 &1614903935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4060,12 +4069,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1614903923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ed318feab1527418905c616595d9cd, type: 3}
+  m_Script: {fileID: 11500000, guid: b2fdca6ec978cbd44991c36c722e06b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 50
-  maxHealth: 50
-  flashLenght: 0.5
+  moveSpeed: 5
+  runBoost: 10
+  _runTime: 0.25
 --- !u!1 &1913185596
 GameObject:
   m_ObjectHideFlags: 0

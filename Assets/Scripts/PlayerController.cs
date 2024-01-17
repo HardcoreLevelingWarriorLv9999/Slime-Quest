@@ -4,41 +4,80 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private float moveSpeed = 0f;
-    private Vector2 moveInput;
-    public Rigidbody2D rb;
-    private Animator animator;
+    [Header("Move Setting")]
+    public float moveSpeed = 5f;
+    private Vector3 moveInput;
+    private Rigidbody2D rb2D;
 
+    [Header("Run Setting")]
+    public float runBoost = 2f;
+    //Thời gian lướt
+    private float runTime;
+    public float _runTime;
+    bool runOnce = false;
+    //Thời gian chờ
+    private float waitTime = 1f;
+    private float currentWaitTime;
+
+    private Animator animator;
+    private HealthManager healthSlime;
     void Start()
     {
         animator = GetComponent<Animator>();
+        healthSlime = FindObjectOfType<HealthManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //di chuyển hướng nào tốc độ vẫn như nhau
+        //di chuyển
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
+        moveInput.Normalize(); // dòng này dùng để khi di chuyển chéo thì sẽ di chuyển theo tốc độ bình thường
+        transform.position += moveInput * moveSpeed * Time.deltaTime;
 
-        moveInput.Normalize();
-        rb.velocity = moveInput * moveSpeed * Time.deltaTime;
+        animator.SetFloat("Walk", moveInput.sqrMagnitude);
 
-        //xoay
+        //Lướt
+        // Cập nhật thời gian chờ
+        if (currentWaitTime > 0)
+        {
+            currentWaitTime -= Time.deltaTime;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) && runTime <= 0 && currentWaitTime <= 0)
+        {
+            animator.SetBool("Run", true);
+            moveSpeed += runBoost;
+            runTime = _runTime;
+            runOnce = true;
+
+            // Đặt lại thời gian chờ
+            currentWaitTime = waitTime;
+
+            // Đặt nhân vật vào trạng thái bất tử
+            healthSlime.isInvincible = true;
+        }
+
+        if (runTime <= 0 && runOnce == true)
+        {
+            animator.SetBool("Run", false);
+            moveSpeed -= runBoost;
+            runOnce = false;
+
+            // Đặt nhân vật ra khỏi trạng thái bất tử
+            healthSlime.isInvincible = false;
+        }
+        else
+        {
+            runTime -= Time.deltaTime;
+        }
+
+        //quay hướng
         if (moveInput.x != 0)
         {
             if (moveInput.x > 0)
-            {
                 transform.localScale = new Vector3(1, 1, 0);
-            }
             else
-            {
                 transform.localScale = new Vector3(-1, 1, 0);
-            }
         }
-
-        //animator
-        animator.SetFloat("Walk", moveInput.sqrMagnitude);
     }
 }

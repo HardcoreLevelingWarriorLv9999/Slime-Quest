@@ -6,13 +6,15 @@ public class HealthManager : MonoBehaviour
 {
     public int currentHealth;
     public int maxHealth;
-
+    public bool isInvincible = false;
+    [Header("Hiệu ứng nhấp nháy")]
     private bool flashActive;
     [SerializeField]
     private float flashLenght = 0f; // Thời gian tồn tại hiệu ứng nhấp nháy
     private float flashCounter = 0f; //bộ đếm thời gian hiệu ứng nháp nháy
 
     private SpriteRenderer playerSprite;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,42 +22,46 @@ public class HealthManager : MonoBehaviour
     }
 
     // Update is called once per frame
- void Update()
-{
-    //hiệu ứng nhấp nháy theo thời gian
-    if (flashActive)
+    void Update()
     {
-        float[] thresholds = new float[] { .99f, .82f, .66f, .49f, .33f, .16f, 0f };
-        for (int i = 0; i < thresholds.Length; i++)
+        //hiệu ứng nhấp nháy theo thời gian
+        if (flashActive)
         {
-            if (flashCounter > flashLenght * thresholds[i])
+            float[] thresholds = new float[] { .99f, .82f, .66f, .49f, .33f, .16f, 0f };
+            for (int i = 0; i < thresholds.Length; i++)
             {
-                ChangeColor(i % 2 == 0 ? 0f : 1f);
-                break;
+                if (flashCounter > flashLenght * thresholds[i])
+                {
+                    ChangeColor(i % 2 == 0 ? 0f : 1f);
+                    break;
+                }
             }
+            if (flashCounter <= 0f)
+            {
+                ChangeColor(1f);
+                flashActive = false;
+            }
+            flashCounter -= Time.deltaTime;
         }
-        if (flashCounter <= 0f)
-        {
-            ChangeColor(1f);
-            flashActive = false;
-        }
-        flashCounter -= Time.deltaTime;
     }
-}
 
-public void ChangeColor(float alpha)
-{
-    playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, alpha);
-}
+    public void ChangeColor(float alpha)
+    {
+        playerSprite.color = new Color(playerSprite.color.r, playerSprite.color.g, playerSprite.color.b, alpha);
+    }
 
     public void HurtPlayer(int damgeToGive)
     {
-        currentHealth -= damgeToGive;
-        flashActive = true;
-        flashCounter = flashLenght;
-        if (currentHealth <= 0)
+        // Kiểm tra xem nhân vật có đang trong trạng thái bất tử hay không
+        if (!isInvincible)
         {
-            gameObject.SetActive(false);
+            currentHealth -= damgeToGive;
+            flashActive = true;
+            flashCounter = flashLenght;
+            if (currentHealth <= 0)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 }
