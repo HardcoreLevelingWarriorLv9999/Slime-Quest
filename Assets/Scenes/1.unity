@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 86918263}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BHomePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -265,7 +265,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 220264030}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -298,7 +298,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 340655384}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -520,7 +520,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 586905677}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: bee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 994230327}
   - component: {fileID: 994230328}
   - component: {fileID: 994230329}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Flying Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -769,6 +769,7 @@ MonoBehaviour:
   speed: 20
   maxRange: 6
   minRange: 0.75
+  maxHealth: 100
 --- !u!61 &994230324
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -951,7 +952,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1265536020}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GHomePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -988,7 +989,7 @@ GameObject:
   - component: {fileID: 1567347032}
   - component: {fileID: 1567347033}
   - component: {fileID: 1567347034}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goblin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4006,6 +4007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 50
   maxHealth: 50
+  isInvincible: 0
   flashLenght: 0.5
 --- !u!60 &1614903934
 PolygonCollider2D:
@@ -4075,6 +4077,11 @@ MonoBehaviour:
   moveSpeed: 5
   runBoost: 10
   _runTime: 0.25
+  attackRange: 1
+  enemyLayers:
+    serializedVersion: 2
+    m_Bits: 64
+  attackDamage: 40
 --- !u!1 &1913185596
 GameObject:
   m_ObjectHideFlags: 0

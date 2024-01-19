@@ -23,6 +23,7 @@ public class GroundEnemy : MonoBehaviour
     {
         myAnimate = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
+
     }
 
     // Update is called once per frame
@@ -56,4 +57,5 @@ public class GroundEnemy : MonoBehaviour
             myAnimate.SetBool("isMoving", false);
         }
     }
+
 }

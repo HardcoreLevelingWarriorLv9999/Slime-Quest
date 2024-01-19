@@ -6,6 +6,8 @@ public class BeeEnemy : MonoBehaviour
     private Animator beeAnimate;
     public Transform player;  // Tham chiếu đến người chơi
     public Transform homePos;  // Tham chiếu đến vị trí đặt sẵn
+
+    [Header("Attack Setting")]
     [SerializeField]
     private float speed = 10f;  // Tốc độ di chuyển của kẻ thù
     private float attackTime = 2f;  // Thời gian giữa các cuộc tấn công
@@ -15,8 +17,10 @@ public class BeeEnemy : MonoBehaviour
     [SerializeField]
     private float minRange = 0f;
 
-    private void Start(){
+    private void Start()
+    {
         beeAnimate = GetComponent<Animator>();
+
     }
 
     private void Update()
@@ -67,4 +71,6 @@ public class BeeEnemy : MonoBehaviour
             beeAnimate.SetBool("bIsMoving", false);
         }
     }
+
+
 }

@@ -16,11 +16,12 @@ public class PlayerController : MonoBehaviour
     public float _runTime;
     bool runOnce = false;
     //Thời gian chờ
-    private float waitTime = 1f;
+    private float waitTime = 0.75f;
     private float currentWaitTime;
 
     private Animator animator;
     private HealthManager healthSlime;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -28,6 +29,12 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Update()
+    {
+        Move();
+        Dash();
+    }
+
+    void Move()
     {
         //di chuyển
         moveInput.x = Input.GetAxisRaw("Horizontal");
@@ -37,6 +44,17 @@ public class PlayerController : MonoBehaviour
 
         animator.SetFloat("Walk", moveInput.sqrMagnitude);
 
+        //quay hướng
+        if (moveInput.x != 0)
+        {
+            if (moveInput.x > 0)
+                transform.localScale = new Vector3(1, 1, 0);
+            else
+                transform.localScale = new Vector3(-1, 1, 0);
+        }
+    }
+    void Dash()
+    {
         //Lướt
         // Cập nhật thời gian chờ
         if (currentWaitTime > 0)
@@ -69,15 +87,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             runTime -= Time.deltaTime;
-        }
-
-        //quay hướng
-        if (moveInput.x != 0)
-        {
-            if (moveInput.x > 0)
-                transform.localScale = new Vector3(1, 1, 0);
-            else
-                transform.localScale = new Vector3(-1, 1, 0);
         }
     }
 }
