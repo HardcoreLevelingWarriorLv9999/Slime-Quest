@@ -15,15 +15,11 @@ public class GroundEnemy : MonoBehaviour
     [SerializeField]
     private float minRange = 0f;
 
-
-
-
     // Start is called before the first frame update
     void Start()
     {
         myAnimate = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
-
     }
 
     // Update is called once per frame

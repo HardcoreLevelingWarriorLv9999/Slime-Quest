@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     [Header("Move Setting")]
     public float moveSpeed = 5f;
     private Vector3 moveInput;
-    private Rigidbody2D rb2D;
 
     [Header("Run Setting")]
     public float runBoost = 2f;
@@ -32,6 +31,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         Dash();
+        Ultimate();
     }
 
     void Move()
@@ -89,4 +89,22 @@ public class PlayerController : MonoBehaviour
             runTime -= Time.deltaTime;
         }
     }
+
+    void Ultimate()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            animator.SetBool("UltimateAttacking", true);
+            StartCoroutine(PerformUltimate());
+        }
+    }
+
+    IEnumerator PerformUltimate()
+    {
+        healthSlime.isInvincible = true;
+        yield return new WaitForSeconds(5);
+        healthSlime.isInvincible = false;
+        animator.SetBool("UltimateAttacking", false);
+    }
+
 }

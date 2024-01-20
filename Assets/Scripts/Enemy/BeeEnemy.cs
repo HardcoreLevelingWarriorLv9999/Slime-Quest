@@ -20,7 +20,6 @@ public class BeeEnemy : MonoBehaviour
     private void Start()
     {
         beeAnimate = GetComponent<Animator>();
-
     }
 
     private void Update()
@@ -71,6 +70,4 @@ public class BeeEnemy : MonoBehaviour
             beeAnimate.SetBool("bIsMoving", false);
         }
     }
-
-
 }
