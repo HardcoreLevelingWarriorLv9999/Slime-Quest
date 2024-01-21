@@ -9,11 +9,11 @@ public class GroundEnemy : MonoBehaviour
 
     public Transform homePos;
     [SerializeField]
-    private float speed = 0f;
+    private float speed;
     [SerializeField]
-    private float maxRange = 0f;
+    private float maxRange;
     [SerializeField]
-    private float minRange = 0f;
+    private float minRange;
 
     // Start is called before the first frame update
     void Start()

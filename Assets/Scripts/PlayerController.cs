@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             currentWaitTime -= Time.deltaTime;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && runTime <= 0 && currentWaitTime <= 0)
+        if (Input.GetKeyDown(KeyCode.Space) && runTime <= 0 && currentWaitTime <= 0 && !animator.GetBool("UltimateAttacking"))
         {
             animator.SetBool("Run", true);
             moveSpeed += runBoost;

@@ -14,7 +14,6 @@ public class EnemyHealthManager : MonoBehaviour
     private float flashLenght = 0f; // Thời gian tồn tại hiệu ứng nhấp nháy
     private float flashCounter = 0f; //bộ đếm thời gian hiệu ứng nháp nháy
     private SpriteRenderer playerSprite;
-
     // Start is called before the first frame update
     void Start()
     {

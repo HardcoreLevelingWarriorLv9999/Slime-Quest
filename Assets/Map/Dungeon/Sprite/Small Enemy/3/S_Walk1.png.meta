@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1eb43c6ca3c8bcd4a9333e5c5aef9645
+guid: f5246fec734773345845217dd69b5a06
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 70
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,118 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Run+Attack_0
+      name: S_Walk1_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 0
-        width: 44
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b026ef6ebf987ee4e8b66c8f22bb573a
-      internalID: -204347712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run+Attack_1
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 45
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 561468dd4176d934caead0ddf81c2177
-      internalID: -1332687498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run+Attack_2
-      rect:
-        serializedVersion: 2
-        x: 286
-        y: 0
-        width: 45
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a6f15585fc400554e8a4478c13997d5c
-      internalID: -1596845910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run+Attack_3
-      rect:
-        serializedVersion: 2
-        x: 415
-        y: 0
-        width: 49
-        height: 35
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d0828c0bb7ff754c8aead6b0b65ee2d
-      internalID: -1443168566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run+Attack_4
-      rect:
-        serializedVersion: 2
-        x: 543
-        y: 0
-        width: 47
-        height: 46
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d95bee86cce02f948b3385c2c891014d
-      internalID: -603350151
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Run+Attack_5
-      rect:
-        serializedVersion: 2
-        x: 672
+        x: 13
         y: 9
-        width: 44
-        height: 46
+        width: 23
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2eea5fba80e39404e81eb07ed6f70cca
-      internalID: -788668647
+      spriteID: a703d71d6718c3f40b0468e05c3f6d88
+      internalID: -1027071183
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run+Attack_6
+      name: S_Walk1_1
       rect:
         serializedVersion: 2
-        x: 802
-        y: 8
-        width: 45
-        height: 47
+        x: 59
+        y: 9
+        width: 25
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -250,20 +145,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 236fd4c44a396464d985082716faf49d
-      internalID: 1444993710
+      spriteID: aa6a593912756de4b9b6516498323c3b
+      internalID: 368712197
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run+Attack_7
+      name: S_Walk1_2
       rect:
         serializedVersion: 2
-        x: 931
-        y: 5
-        width: 45
-        height: 48
+        x: 107
+        y: 12
+        width: 25
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -271,20 +166,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83c9996bc2d303f4ebeab333a10d22ba
-      internalID: 908290312
+      spriteID: f45748f00b05317489e72f733ee01cbe
+      internalID: -327662816
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run+Attack_8
+      name: S_Walk1_3
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 0
-        width: 41
-        height: 47
+        x: 156
+        y: 11
+        width: 24
+        height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a66abc05f0f5c74b85e2f73bef069ce
-      internalID: -590334727
+      spriteID: 79e7a8a2a010b3448a2c7114303db459
+      internalID: 1763863362
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Run+Attack_9
+      name: S_Walk1_4
       rect:
         serializedVersion: 2
-        x: 1193
-        y: 0
-        width: 47
-        height: 41
+        x: 205
+        y: 9
+        width: 23
+        height: 21
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +208,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7bb4e4eb1dc2ec43a37afe3ea9b7349
-      internalID: -604536411
+      spriteID: 3ec24c030f9bf604c965ce3ac9f0d5fd
+      internalID: -1650317385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Walk1_5
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 9
+        width: 23
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d10d4f0e8f628341a65c2bc4356d2ab
+      internalID: 1717781940
       vertices: []
       indices: 
       edges: []
@@ -330,16 +246,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Run+Attack_0: -204347712
-      Run+Attack_1: -1332687498
-      Run+Attack_2: -1596845910
-      Run+Attack_3: -1443168566
-      Run+Attack_4: -603350151
-      Run+Attack_5: -788668647
-      Run+Attack_6: 1444993710
-      Run+Attack_7: 908290312
-      Run+Attack_8: -590334727
-      Run+Attack_9: -604536411
+      S_Walk1_0: -1027071183
+      S_Walk1_1: 368712197
+      S_Walk1_2: -327662816
+      S_Walk1_3: 1763863362
+      S_Walk1_4: -1650317385
+      S_Walk1_5: 1717781940
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
