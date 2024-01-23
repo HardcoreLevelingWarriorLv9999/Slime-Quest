@@ -54,6 +54,7 @@ public class GroundEnemy : MonoBehaviour
         }
     }
 
+    //Knockback enemy
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Ultimate")

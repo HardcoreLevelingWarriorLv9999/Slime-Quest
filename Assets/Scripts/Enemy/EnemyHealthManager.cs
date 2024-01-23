@@ -13,11 +13,18 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField]
     private float flashLenght = 0f; // Thời gian tồn tại hiệu ứng nhấp nháy
     private float flashCounter = 0f; //bộ đếm thời gian hiệu ứng nháp nháy
+
+    [Header("Animation")]
+    public string defeatAnimationTrigger = "BDefeated"; // Tên của animation trigger khi quái vật bị tiêu diệt
+
     private SpriteRenderer playerSprite;
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         playerSprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,7 +63,12 @@ public class EnemyHealthManager : MonoBehaviour
         flashCounter = flashLenght;
         if (currentHealth <= 0)
         {
-            Destroy(gameObject);
+            animator.SetTrigger(defeatAnimationTrigger);
         }
+    }
+
+    public void RemoveEnemy()
+    {
+        Destroy(gameObject);
     }
 }
