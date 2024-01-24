@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8951753731712181315}
   m_Layer: 6
-  m_Name: GHomePosition
+  m_Name: GHomePosition1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1669133938686475153}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.3781285, y: -3.3347957, z: 9.943529}
+  m_LocalPosition: {x: 0.87, y: 0.23, z: 9.943529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -61,8 +61,40 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8951753731712181315}
+  - {fileID: 1388739844543838334}
   - {fileID: 4599990482296852541}
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8452609102962154700
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1388739844543838334}
+  m_Layer: 6
+  m_Name: GHomePosition2
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1388739844543838334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452609102962154700}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 9.17, y: 0.18, z: 9.943529}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6781696410782143679}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8586631560754483886
 GameObject:
@@ -96,7 +128,7 @@ Transform:
   m_GameObject: {fileID: 8586631560754483886}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.3781285, y: -3.1047957, z: 9.943529}
+  m_LocalPosition: {x: 0.8699994, y: 0.32479644, z: 9.943529}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -260,6 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homePos: {fileID: 8951753731712181315}
+  secondPos: {fileID: 1388739844543838334}
   speed: 2
   maxRange: 5
   minRange: 0.75

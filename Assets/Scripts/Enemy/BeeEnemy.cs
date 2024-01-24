@@ -38,6 +38,7 @@ public class BeeEnemy : MonoBehaviour
         }
     }
 
+    //dash tấn công
     IEnumerator DashToTarget(Vector3 targetPosition)
     {
         Vector3 direction = (targetPosition - transform.position).normalized;

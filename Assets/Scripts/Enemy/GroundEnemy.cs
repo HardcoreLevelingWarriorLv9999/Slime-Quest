@@ -8,6 +8,9 @@ public class GroundEnemy : MonoBehaviour
     private Transform target;
 
     public Transform homePos;
+    public Transform secondPos;
+    private Transform nextPos;
+
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -20,19 +23,19 @@ public class GroundEnemy : MonoBehaviour
     {
         myAnimate = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
+        nextPos = homePos;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //khi rời khỏi phạm vi cố định thì sẽ trở lại vị trí đặt sẵn
         if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
         {
             FollowPlayer();
         }
         else if (Vector3.Distance(target.position, transform.position) >= maxRange)
         {
-            GoHome();
+            MoveToNextPos();
         }
     }
 
@@ -43,14 +46,15 @@ public class GroundEnemy : MonoBehaviour
         myAnimate.SetFloat("moveY", target.position.y - transform.position.y);
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
-    public void GoHome()
+    public void MoveToNextPos()
     {
-        myAnimate.SetFloat("moveX", homePos.position.x - transform.position.x);
-        myAnimate.SetFloat("moveY", homePos.position.y - transform.position.y);
-        transform.position = Vector3.MoveTowards(transform.position, homePos.position, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.position, homePos.position) == 0)
+        myAnimate.SetFloat("moveX", nextPos.position.x - transform.position.x);
+        myAnimate.SetFloat("moveY", nextPos.position.y - transform.position.y);
+        transform.position = Vector3.MoveTowards(transform.position, nextPos.position, speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, nextPos.position) == 0)
         {
-            myAnimate.SetBool("isMoving", false);
+            myAnimate.SetBool("isMoving", true);
+            nextPos = nextPos == homePos ? secondPos : homePos;
         }
     }
 
