@@ -62,13 +62,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4954660348934188316}
-    m_Position: {x: 420, y: 240, z: 0}
+    m_Position: {x: 420, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8321105349031997119}
-    m_Position: {x: 770, y: 160, z: 0}
+    m_Position: {x: 780, y: 200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3669825848083145728}
-    m_Position: {x: 770, y: 360, z: 0}
+    m_Position: {x: 590, y: 360, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -121,12 +121,6 @@ AnimatorController:
     m_Controller: {fileID: 0}
   - m_Name: moveY
     m_Type: 1
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
-  - m_Name: isMoving
-    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0

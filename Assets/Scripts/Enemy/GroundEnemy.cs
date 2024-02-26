@@ -18,6 +18,9 @@ public class GroundEnemy : MonoBehaviour
     [SerializeField]
     private float minRange;
 
+    [SerializeField]
+    private float attackRange;
+
     private EnemyHealthManager enemyHealthManager;
 
     // Start is called before the first frame update
@@ -30,25 +33,43 @@ public class GroundEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+void Update()
+{
+    float distanceToPlayer = Vector3.Distance(target.position, transform.position);
+    if (!enemyHealthManager.isDefeated)
     {
-        if (!enemyHealthManager.isDefeated && Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
+        if (distanceToPlayer <= maxRange && distanceToPlayer >= minRange)
         {
-            FollowPlayer();
+            if (distanceToPlayer <= attackRange)
+            {
+                AttackPlayer();
+            }
+            else
+            {
+                FollowPlayer();
+            }
         }
-        else if (Vector3.Distance(target.position, transform.position) >= maxRange)
+        else if (distanceToPlayer >= maxRange)
         {
             MoveToNextPos();
+            myAnimate.SetBool("isAttacking", false); 
         }
     }
+}
 
-    public void FollowPlayer()
-    {
-        myAnimate.SetBool("isMoving", true);
-        myAnimate.SetFloat("moveX", target.position.x - transform.position.x);
-        myAnimate.SetFloat("moveY", target.position.y - transform.position.y);
-        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-    }
+public void AttackPlayer()
+{
+    myAnimate.SetBool("isAttacking", true);
+}
+
+public void FollowPlayer()
+{
+    myAnimate.SetBool("isAttacking", false); 
+    myAnimate.SetFloat("moveX", target.position.x - transform.position.x);
+    myAnimate.SetFloat("moveY", target.position.y - transform.position.y);
+    transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+}
+
     
     public void MoveToNextPos()
     {
@@ -57,7 +78,6 @@ public class GroundEnemy : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, nextPos.position, speed * Time.deltaTime);
         if (Vector3.Distance(transform.position, nextPos.position) == 0)
         {
-            myAnimate.SetBool("isMoving", true);
             nextPos = nextPos == homePos ? secondPos : homePos;
         }
     }

@@ -210,6 +210,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 10
   maxHealth: 10
+  isDefeated: 0
   flashLenght: 0.5
   defeatAnimationTrigger: wDefeated
 --- !u!114 &8135596949423677263
@@ -229,6 +230,7 @@ MonoBehaviour:
   speed: 2
   maxRange: 5
   minRange: 0.75
+  attackRange: 2
 --- !u!1 &2735639959801938875
 GameObject:
   m_ObjectHideFlags: 0
