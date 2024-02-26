@@ -211,7 +211,7 @@ MonoBehaviour:
   currentHealth: 10
   maxHealth: 10
   flashLenght: 0.5
-  defeatAnimationTrigger: WDefeated
+  defeatAnimationTrigger: wDefeated
 --- !u!114 &8135596949423677263
 MonoBehaviour:
   m_ObjectHideFlags: 0

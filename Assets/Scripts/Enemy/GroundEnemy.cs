@@ -18,18 +18,21 @@ public class GroundEnemy : MonoBehaviour
     [SerializeField]
     private float minRange;
 
+    private EnemyHealthManager enemyHealthManager;
+
     // Start is called before the first frame update
     void Start()
     {
         myAnimate = GetComponent<Animator>();
         target = FindObjectOfType<PlayerController>().transform;
         nextPos = homePos;
+        enemyHealthManager = GetComponent<EnemyHealthManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
+        if (!enemyHealthManager.isDefeated && Vector3.Distance(target.position, transform.position) <= maxRange && Vector3.Distance(target.position, transform.position) >= minRange)
         {
             FollowPlayer();
         }
@@ -46,6 +49,7 @@ public class GroundEnemy : MonoBehaviour
         myAnimate.SetFloat("moveY", target.position.y - transform.position.y);
         transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
     }
+    
     public void MoveToNextPos()
     {
         myAnimate.SetFloat("moveX", nextPos.position.x - transform.position.x);

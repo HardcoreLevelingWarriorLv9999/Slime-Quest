@@ -12,13 +12,12 @@ public class HurtPlayer : MonoBehaviour
 
     [SerializeField]
     private int damgeToGive = 10;
-    // Start is called before the first frame update
+
     void Start()
     {
         healthSlime = FindObjectOfType<HealthManager>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (isTouching)

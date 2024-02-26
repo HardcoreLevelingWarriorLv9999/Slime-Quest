@@ -7,6 +7,7 @@ public class EnemyHealthManager : MonoBehaviour
     [Header("Máu")]
     public int currentHealth = 0;
     public int maxHealth = 0;
+    public bool isDefeated = false;
 
     [Header("Hiệu ứng nhấp nháy")]
     private bool flashActive;
@@ -64,6 +65,7 @@ public class EnemyHealthManager : MonoBehaviour
         if (currentHealth <= 0)
         {
             animator.SetTrigger(defeatAnimationTrigger);
+            isDefeated = true; // Cập nhật trạng thái isDefeated
         }
     }
 

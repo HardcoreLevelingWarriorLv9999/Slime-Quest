@@ -292,3 +292,4 @@ MonoBehaviour:
   currentHealth: 10
   maxHealth: 10
   flashLenght: 0.5
+  defeatAnimationTrigger: bDefeated

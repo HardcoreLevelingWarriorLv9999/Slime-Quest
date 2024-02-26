@@ -296,6 +296,8 @@ MonoBehaviour:
   speed: 2
   maxRange: 5
   minRange: 0.75
+  attackRange: 5
+  attackDelay: 4
 --- !u!114 &7968344582569104857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,5 +325,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 10
   maxHealth: 10
+  isDefeated: 0
   flashLenght: 0.5
-  defeatAnimationTrigger: SDefeated
+  defeatAnimationTrigger: sDefeated
