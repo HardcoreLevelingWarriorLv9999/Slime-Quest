@@ -23,6 +23,8 @@ public class GroundEnemy : MonoBehaviour
 
     private EnemyHealthManager enemyHealthManager;
 
+    private bool isAttacking = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,44 +35,45 @@ public class GroundEnemy : MonoBehaviour
     }
 
     // Update is called once per frame
-void Update()
-{
-    float distanceToPlayer = Vector3.Distance(target.position, transform.position);
-    if (!enemyHealthManager.isDefeated)
+    void Update()
     {
-        if (distanceToPlayer <= maxRange && distanceToPlayer >= minRange)
+        float distanceToPlayer = Vector3.Distance(target.position, transform.position);
+        if (!enemyHealthManager.isDefeated && !isAttacking)
         {
-            if (distanceToPlayer <= attackRange)
+            if (distanceToPlayer <= maxRange && distanceToPlayer >= minRange)
             {
-                AttackPlayer();
+                if (distanceToPlayer <= attackRange)
+                {
+                    AttackPlayer();
+                }
+                else
+                {
+                    FollowPlayer();
+                }
             }
-            else
+            else if (distanceToPlayer >= maxRange)
             {
-                FollowPlayer();
+                MoveToNextPos();
+                myAnimate.SetBool("isAttacking", false); 
             }
-        }
-        else if (distanceToPlayer >= maxRange)
-        {
-            MoveToNextPos();
-            myAnimate.SetBool("isAttacking", false); 
         }
     }
-}
 
-public void AttackPlayer()
-{
-    myAnimate.SetBool("isAttacking", true);
-}
+    public void AttackPlayer()
+    {
+        myAnimate.SetBool("isAttacking", true);
+        isAttacking = true;
+        Invoke("ResetAttack", 1f);
+    }
 
-public void FollowPlayer()
-{
-    myAnimate.SetBool("isAttacking", false); 
-    myAnimate.SetFloat("moveX", target.position.x - transform.position.x);
-    myAnimate.SetFloat("moveY", target.position.y - transform.position.y);
-    transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-}
+    public void FollowPlayer()
+    {
+        myAnimate.SetBool("isAttacking", false); 
+        myAnimate.SetFloat("moveX", target.position.x - transform.position.x);
+        myAnimate.SetFloat("moveY", target.position.y - transform.position.y);
+        transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+    }
 
-    
     public void MoveToNextPos()
     {
         myAnimate.SetFloat("moveX", nextPos.position.x - transform.position.x);
@@ -90,5 +93,10 @@ public void FollowPlayer()
             Vector2 difference = transform.position - other.transform.position;
             transform.position = new Vector2(transform.position.x + difference.x, transform.position.y + difference.y);
         }
+    }
+
+    private void ResetAttack()
+    {
+        isAttacking = false;
     }
 }

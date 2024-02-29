@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HurtPlayer : MonoBehaviour
 {
     private HealthManager healthSlime;
+    private PlayerController playerController; 
     private float waitToHurt = 2f;
     private bool isTouching;
 
@@ -16,6 +17,7 @@ public class HurtPlayer : MonoBehaviour
     void Start()
     {
         healthSlime = FindObjectOfType<HealthManager>();
+        playerController = FindObjectOfType<PlayerController>(); 
     }
 
     void Update()
@@ -26,6 +28,8 @@ public class HurtPlayer : MonoBehaviour
             if (waitToHurt <= 0)
             {
                 healthSlime.HurtPlayer(damgeToGive);
+                Vector3 knockbackDirection = (playerController.transform.position - transform.position).normalized; // Tính toán hướng đẩy lùi
+                playerController.Knockback(knockbackDirection); // Gọi hàm Knockback
                 waitToHurt = 2f;
             }
         }
@@ -36,6 +40,8 @@ public class HurtPlayer : MonoBehaviour
         if (other.collider.tag == "Player")
         {
             other.gameObject.GetComponent<HealthManager>().HurtPlayer(damgeToGive);
+            Vector3 knockbackDirection = (playerController.transform.position - transform.position).normalized; // Tính toán hướng đẩy lùi
+            playerController.Knockback(knockbackDirection); // Gọi hàm Knockback
         }
     }
 

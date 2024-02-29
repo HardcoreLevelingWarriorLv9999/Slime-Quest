@@ -18,6 +18,12 @@ public class PlayerController : MonoBehaviour
     private float waitTime = 0.75f;
     private float currentWaitTime;
 
+    [Header("Damage Effect")]
+    public float knockbackSpeed = 10f; // Tốc độ đẩy lùi
+    public float knockbackDuration = 0.2f; // Thời gian đẩy lùi
+
+    private bool isKnockback; // Kiểm tra xem nhân vật có đang bị đẩy lùi không
+    private float knockbackStartTime; // Thời gian bắt đầu đẩy lùi
     private Animator animator;
     private HealthManager healthSlime;
 
@@ -34,25 +40,46 @@ public class PlayerController : MonoBehaviour
         Ultimate();
     }
 
+    public void Knockback(Vector3 direction)
+    {
+        isKnockback = true;
+        knockbackStartTime = Time.time;
+        moveInput = direction * knockbackSpeed;
+    }
+
+    
     void Move()
     {
-        //di chuyển
-        moveInput.x = Input.GetAxisRaw("Horizontal");
-        moveInput.y = Input.GetAxisRaw("Vertical");
-        moveInput.Normalize(); // dòng này dùng để khi di chuyển chéo thì sẽ di chuyển theo tốc độ bình thường
-        transform.position += moveInput * moveSpeed * Time.deltaTime;
-
-        animator.SetFloat("Walk", moveInput.sqrMagnitude);
-
-        //quay hướng
-        if (moveInput.x != 0)
+        if (isKnockback)
         {
-            if (moveInput.x > 0)
-                transform.localScale = new Vector3(1, 1, 0);
+            if (Time.time >= knockbackStartTime + knockbackDuration)
+                isKnockback = false;
             else
-                transform.localScale = new Vector3(-1, 1, 0);
+                transform.position += moveInput * Time.deltaTime;
+        }
+        else
+        {
+
+            //di chuyển
+            moveInput.x = Input.GetAxisRaw("Horizontal");
+            moveInput.y = Input.GetAxisRaw("Vertical");
+            moveInput.Normalize(); // dòng này dùng để khi di chuyển chéo thì sẽ di chuyển theo tốc độ bình thường
+            transform.position += moveInput * moveSpeed * Time.deltaTime;
+
+            animator.SetFloat("Walk", moveInput.sqrMagnitude);
+
+            //quay hướng
+            if (moveInput.x != 0)
+            {
+                if (moveInput.x > 0)
+                    transform.localScale = new Vector3(1, 1, 0);
+                else
+                    transform.localScale = new Vector3(-1, 1, 0);
+            }
         }
     }
+
+
     void Dash()
     {
         //Lướt
