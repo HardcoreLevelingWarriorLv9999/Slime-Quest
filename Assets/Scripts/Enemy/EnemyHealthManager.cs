@@ -16,7 +16,7 @@ public class EnemyHealthManager : MonoBehaviour
     private float flashCounter = 0f; //bộ đếm thời gian hiệu ứng nháp nháy
 
     [Header("Animation")]
-    public string defeatAnimationTrigger = "BDefeated"; // Tên của animation trigger khi quái vật bị tiêu diệt
+    public string defeatAnimationTrigger; // Tên của animation trigger khi quái vật bị tiêu diệt
 
     private SpriteRenderer playerSprite;
 

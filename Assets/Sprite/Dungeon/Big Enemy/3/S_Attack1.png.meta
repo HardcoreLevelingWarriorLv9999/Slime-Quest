@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b9b40bea4d2cc7f48a3eaf571754303a
+guid: c6bd4e006c6d98c4fab73e779157d180
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,12 +110,75 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: U_Death_0
+      name: S_Attack1_0
       rect:
         serializedVersion: 2
-        x: 38
+        x: 31
         y: 29
-        width: 23
+        width: 40
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e21b17b0a3919498b6cba7c978c950
+      internalID: 1823450081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Attack1_1
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 29
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31598d91e9f871041b04218f224ea1dd
+      internalID: -1365681226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Attack1_2
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 29
+        width: 41
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 844b6a8c82c67fa4f9594cc0cb92cfad
+      internalID: 864601519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: S_Attack1_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 32
+        width: 40
         height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -124,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 497cf100fb59bba47adea6c103805683
-      internalID: -1709255736
+      spriteID: 81728c19a38e2734d849ebf1a61727aa
+      internalID: -1307841471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Death_1
+      name: S_Attack1_4
       rect:
         serializedVersion: 2
-        x: 134
+        x: 408
         y: 29
-        width: 23
-        height: 51
+        width: 37
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +208,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b388e4f2e71fd664bac7dd62ad0aae95
-      internalID: -41720524
+      spriteID: 5a756be4c26ae294ebdc2100d3d067ac
+      internalID: 1926973398
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Death_2
+      name: S_Attack1_5
       rect:
         serializedVersion: 2
-        x: 230
+        x: 505
         y: 29
-        width: 23
-        height: 52
+        width: 36
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,20 +229,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2517dae02d0ba1499aae597472f8ca4
-      internalID: -898308781
+      spriteID: aafdf51917c8a164bb8de1cd48cf81bb
+      internalID: -1050849640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Death_3
+      name: S_Attack1_6
       rect:
         serializedVersion: 2
-        x: 313
-        y: 22
-        width: 46
-        height: 57
+        x: 602
+        y: 29
+        width: 37
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +250,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7363f40871655a6478cad053c6508164
-      internalID: -115962685
+      spriteID: d2b3fd54b4fc3cb4d812c1fb98ec9dc2
+      internalID: 2106164770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: U_Death_4
+      name: S_Attack1_7
       rect:
         serializedVersion: 2
-        x: 407
-        y: 18
-        width: 51
-        height: 60
+        x: 699
+        y: 29
+        width: 38
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,29 +271,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25d47393cc8a8e4b9b17b34d37b0614
-      internalID: -1874432829
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: U_Death_5
-      rect:
-        serializedVersion: 2
-        x: 501
-        y: 22
-        width: 54
-        height: 60
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8259992edc0ec84d9b2b4ac38700abf
-      internalID: 478326403
+      spriteID: 0e02d36286dc8034395aa78e9b0a9412
+      internalID: 1310984326
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      U_Death_0: -1709255736
-      U_Death_1: -41720524
-      U_Death_2: -898308781
-      U_Death_3: -115962685
-      U_Death_4: -1874432829
-      U_Death_5: 478326403
+      S_Attack1_0: 1823450081
+      S_Attack1_1: -1365681226
+      S_Attack1_2: 864601519
+      S_Attack1_3: -1307841471
+      S_Attack1_4: 1926973398
+      S_Attack1_5: -1050849640
+      S_Attack1_6: 2106164770
+      S_Attack1_7: 1310984326
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
