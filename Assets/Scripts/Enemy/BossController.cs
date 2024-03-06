@@ -11,10 +11,12 @@ public class BossController : MonoBehaviour
     private PlayerController playerController;
     private float specialAbilityTimer; // Đếm thời gian chờ kỹ năng đặc biệt
 
+    private Animator bossAnimator; 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         playerController = FindObjectOfType<PlayerController>();
+        bossAnimator = GetComponent<Animator>();
         specialAbilityTimer = specialAbilityCooldown; // Khởi tạo đếm thời gian
         startSpeed = speed;
     }
@@ -43,6 +45,9 @@ public class BossController : MonoBehaviour
         // Di chuyển con boss theo người chơi
         Vector3 moveDirection = (player.position - transform.position).normalized;
         transform.Translate(moveDirection * speed * Time.deltaTime);
+
+        bossAnimator.SetFloat("moveX", moveDirection.x);
+        bossAnimator.SetFloat("moveY", moveDirection.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
