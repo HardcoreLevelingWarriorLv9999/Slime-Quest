@@ -2,37 +2,44 @@ using UnityEngine;
 
 public class BossController : MonoBehaviour
 {
-    public float speed = 2f;
+    public float speed = 4f;
     private float startSpeed;
     public bool isSpecial = false;
-    public float specialAbilityCooldown = 10f; // Thời gian chờ kỹ năng đặc biệt (tính bằng giây)
-
+    public float specialAbilityCooldown = 10f;
+    private bool isAttacking = false;
     private Transform player;
-    private PlayerController playerController;
-    private float specialAbilityTimer; // Đếm thời gian chờ kỹ năng đặc biệt
+    private float specialAbilityTimer;
 
-    private Animator bossAnimator; 
+    private Animator bossAnimator;
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        playerController = FindObjectOfType<PlayerController>();
         bossAnimator = GetComponent<Animator>();
-        specialAbilityTimer = specialAbilityCooldown; // Khởi tạo đếm thời gian
+        specialAbilityTimer = specialAbilityCooldown;
         startSpeed = speed;
     }
 
     private void Update()
     {
-        // Cập nhật hành vi của con boss
+        if (isAttacking)
+        {
+            bossAnimator.SetBool("boIsAttacking", true);
+        }
+        else
+        {
+            bossAnimator.SetBool("boIsAttacking", false);
+        }
+
         if (isSpecial)
         {
             // Nếu đang sử dụng kỹ năng đặc biệt, không tính thời gian
             specialAbilityTimer = 0f;
             speed = 6f; // Tăng tốc độ khi đặc biệt
+            bossAnimator.SetBool("boSpAttacking", true);
         }
         else
         {
-            // Hành vi thông thường: đếm ngược thời gian chờ kỹ năng đặc biệt
+            // đếm ngược thời gian chờ kỹ năng đặc biệt
             specialAbilityTimer -= Time.deltaTime;
             if (specialAbilityTimer <= 0f)
             {
@@ -42,7 +49,6 @@ public class BossController : MonoBehaviour
             }
         }
 
-        // Di chuyển con boss theo người chơi
         Vector3 moveDirection = (player.position - transform.position).normalized;
         transform.Translate(moveDirection * speed * Time.deltaTime);
 
@@ -54,13 +60,27 @@ public class BossController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") && isSpecial)
         {
-            // Xử lý va chạm với người chơi
             isSpecial = false;
-            // Đặt lại tốc độ về giá trị ban đầu
             speed = startSpeed;
-            // Tùy chọn, đặt lại đếm thời gian kỹ năng đặc biệt ở đây
             specialAbilityTimer = specialAbilityCooldown;
+            bossAnimator.SetBool("boSpAttacking", false);
             Debug.Log("Cham");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isAttacking = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isAttacking = false;
         }
     }
 }
