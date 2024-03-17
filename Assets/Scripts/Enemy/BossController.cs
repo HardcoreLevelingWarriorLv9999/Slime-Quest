@@ -64,7 +64,6 @@ public class BossController : MonoBehaviour
             speed = startSpeed;
             specialAbilityTimer = specialAbilityCooldown;
             bossAnimator.SetBool("boSpAttacking", false);
-            Debug.Log("Cham");
         }
     }
 
