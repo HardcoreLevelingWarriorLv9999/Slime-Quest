@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 82f9900392e1afc41a4807aaa29ef0c9
+guid: 6b995d36bccbffe4a91a15c8fa358f8c
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - BitScript
+  - Trirong
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
