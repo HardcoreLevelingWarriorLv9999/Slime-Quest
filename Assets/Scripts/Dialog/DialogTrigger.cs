@@ -28,7 +28,7 @@ public class DialogTrigger : MonoBehaviour
 
         private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (inRange && Input.GetKeyDown(KeyCode.F))
         {
             StartDialog();
         }
