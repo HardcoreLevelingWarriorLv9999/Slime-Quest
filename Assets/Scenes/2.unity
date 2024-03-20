@@ -1652,7 +1652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   imageSpriteObject: {fileID: 1454258485}
   dialogBehaviour: {fileID: 1075184414}
-  dialogNodeGraph: {fileID: 11400000, guid: 0ec2356345ac5244e8dba351f5f83edb, type: 2}
+  dialogNodeGraph: {fileID: 11400000, guid: 7cb74859f807b704caa449b4a75d35a1, type: 2}
 --- !u!1 &418410623
 GameObject:
   m_ObjectHideFlags: 0

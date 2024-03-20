@@ -9,7 +9,6 @@ public class MenuController : MonoBehaviour
     public void BatDau()
     {
         SceneManager.LoadScene(0);
-
     }
     public void Thoat()
     {
