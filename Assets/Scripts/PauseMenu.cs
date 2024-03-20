@@ -12,7 +12,7 @@ public class pauseMenu : MonoBehaviour
     }
     public void Home()
     {
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene(0);
     }
     public void Resume()
     {

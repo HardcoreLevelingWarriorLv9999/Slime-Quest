@@ -8,11 +8,11 @@ public class MenuController : MonoBehaviour
 {
     public void BatDau()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
     public void Thoat()
     {
-        //Application.Quit();
+        Application.Quit();
         Debug.Log("da thoat");
     }
 }
