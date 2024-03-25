@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour
 {
-    [SerializeField] Animator transitionAnim;
+    private Animator transitionAnim;
     public string targetSceneName; // Tên của scene đích
 
     private void OnTriggerEnter2D(Collider2D other)
