@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class HealthManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class HealthManager : MonoBehaviour
     private float flashCounter = 0f; //bộ đếm thời gian hiệu ứng nháp nháy
 
     private SpriteRenderer playerSprite;
+
+    [SerializeField] private GameObject deadmenu;
 
     // Start is called before the first frame update
     void Start()
@@ -63,6 +66,7 @@ public class HealthManager : MonoBehaviour
             if (currentHealth <= 0)
             {
                 gameObject.SetActive(false);
+                deadmenu.SetActive(true);
             }
         }
     }

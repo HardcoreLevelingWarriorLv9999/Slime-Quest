@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class TurnOffAnimation : MonoBehaviour
 {
-    public GameObject image;
-    void TurnOff()
-    {
+   public GameObject image;
+   void TurnOff()
+   {
         image.SetActive(false);
-    }
+   }
 
-    void TurnOn()
-    {
+   void TurnOn()
+   {
         image.SetActive(true);
-    }
+   }
 }
